@@ -6,7 +6,6 @@ module.exports = {
     'stylelint-order-config-standard',
   ],
   plugins: ['stylelint-order'],
-  // processors: ['stylelint-processor-styled-components'],
   rules: {
     'color-hex-case': 'upper',
     // 'order/properties-alphabetical-order': true,

@@ -1,14 +1,11 @@
 import React, { FC } from 'react'
 
-import './App.module.css'
 import Layout from './Layout'
 
+import './App.module.css'
+
 const App: FC = () => {
-  return (
-    <>
-      <Layout />
-    </>
-  )
+  return <Layout />
 }
 
 export default App

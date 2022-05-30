@@ -1,8 +1,9 @@
 import React, { FC } from 'react'
 
-import './HeaderBar.css'
-import Filters from './Filters'
 import Buttons from './Buttons'
+import Filters from './Filters'
+
+import './HeaderBar.css'
 
 const HeaderBar: FC = () => {
   return (

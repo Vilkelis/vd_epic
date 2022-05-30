@@ -1,11 +1,11 @@
 import React, { FC, PropsWithChildren } from 'react'
 
-import './Layout.module.css'
-
 import { navBarItems } from 'constants/constants'
 import HeaderBar from './HeaderBar'
 import Logo from './Logo'
 import NavBar from './NavBar'
+
+import './Layout.module.css'
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (

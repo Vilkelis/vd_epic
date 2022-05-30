@@ -1,0 +1,76 @@
+image: $REMOTE_REGISTRY_HOST/redmine_projects/docker:stable
+services:
+  - name: $REMOTE_REGISTRY_HOST/redmine_projects/docker:dind
+    entrypoint:
+      - dockerd-entrypoint.sh
+    command:
+      - --insecure-registry=$REMOTE_REGISTRY_HOST
+
+stages:
+  - release_dev
+  - release_stage
+
+variables:
+  BACK_BRANCH: "" # use backend image from BACK_BRANCH if exists, then from FRONT_BRANCH if exists, then from stage branch
+  GIT_SSL_NO_VERIFY: "1"
+  REDIS_VERSION: 5.0.12
+  WEB_PROJECT_NAME: landing
+  CONTAINER_IMAGE: react_projects/$CI_PROJECT_NAME
+  NGINX_CONF_PATH: /etc/nginx/conf.d
+  SLACK_TEXT: Project was built. You can open this on
+  SLACK_PROD_TEXT: Production environment has been updated
+  SLACK_TEST_TEXT: RSPEC tests has been passed
+
+before_script:
+  - docker login $REMOTE_REGISTRY_HOST -u $REMOTE_REGISTRY_ADMIN -p $REMOTE_REGISTRY_PASS
+  - touch .env
+  - export CI_COMMIT_REF_SLUG_ESC=$(echo $CI_COMMIT_REF_SLUG|tr '_' '-')
+
+
+
+
+front_release_dev:
+  stage: release_dev
+  tags:
+    - devlocalcommon
+  script:
+    - export CONTAINER_NAME_FRONT=${WEB_PROJECT_NAME}_front_${CI_COMMIT_REF_SLUG}
+    - if ! { PORT_FRONT=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "80/tcp") 0).HostPort}}' $CONTAINER_NAME_FRONT 2>/dev/null) && [ $PORT_FRONT -gt 11000 ] 2>/dev/null; }; then  PORT_FRONT=$(( ( RANDOM % 1000 )  + 11000 )); while [[ `sudo lsof -i:$PORT_FRONT | wc -l` -gt 0 ]]; do (( PORT_FRONT++ )); done ; fi
+    - export PORT_FRONT=${PORT_FRONT}
+    - docker-compose --project-name ${CI_PROJECT_NAME}_${CI_COMMIT_REF_SLUG} -f docker-compose.dev.yml down --rmi all --volumes || true
+    - docker-compose --project-name ${CI_PROJECT_NAME}_${CI_COMMIT_REF_SLUG} -f docker-compose.dev.yml up -d
+    - sudo nginx -t >/dev/null 2>&1
+    - rm $NGINX_CONF_PATH/${CI_COMMIT_REF_SLUG_ESC}.${WEB_PROJECT_NAME}.dev.techrm.ru.conf || true
+    - sed -i -e "s/CI_PROJECT_NAME/${CI_COMMIT_REF_SLUG_ESC}.${WEB_PROJECT_NAME}/g" nginx/nginx.conf.front
+    - sed -i -e "s/REDMINE_HOST/${REDMINE_HOST_DEV}/g" nginx/nginx.conf.front
+    - sed -i -e "s/PORT/$PORT_FRONT/g" nginx/nginx.conf.front
+    - sed -i -e "s/stg/dev/g" nginx/nginx.conf.front
+    - mv nginx/nginx.conf.front $NGINX_CONF_PATH/${CI_COMMIT_REF_SLUG_ESC}.${WEB_PROJECT_NAME}.dev.techrm.ru.ru.conf
+    - sudo nginx -t >/dev/null 2>&1
+    - sudo service nginx reload
+    - curl -X POST --header "Content-Type:application/json" --data "{\"channel\":\"#pipeline\",\"text\":\"${SLACK_TEXT} ${CI_COMMIT_REF_SLUG_ESC}.${WEB_PROJECT_NAME}.dev.techrm.ru\"}" $SLACK_HOOK
+  except:
+    - stage
+    - master
+
+front_release_stage:
+  stage: release_stage
+  tags:
+    - stglocalcommon
+  script:
+    - export CONTAINER_NAME_FRONT=${WEB_PROJECT_NAME}_front_${CI_COMMIT_REF_SLUG}
+    - if ! { PORT_FRONT=$(docker inspect --format='{{(index (index .NetworkSettings.Ports "80/tcp") 0).HostPort}}' $CONTAINER_NAME_FRONT 2>/dev/null) && [ $PORT_FRONT -gt 11000 ] 2>/dev/null; }; then  PORT_FRONT=$(( ( RANDOM % 1000 )  + 11000 )); while [[ `sudo lsof -i:$PORT_FRONT | wc -l` -gt 0 ]]; do (( PORT_FRONT++ )); done ; fi
+    - export PORT_FRONT=${PORT_FRONT}
+    - docker-compose --project-name ${CI_PROJECT_NAME}_${CI_COMMIT_REF_SLUG} -f docker-compose.dev.yml down --rmi all --volumes || true
+    - docker-compose --project-name ${CI_PROJECT_NAME}_${CI_COMMIT_REF_SLUG} -f docker-compose.dev.yml up -d
+    - sudo nginx -t >/dev/null 2>&1
+    - rm $NGINX_CONF_PATH/${WEB_PROJECT_NAME}.stg.techrm.ru.conf || true
+    - sed -i -e "s/CI_PROJECT_NAME/${WEB_PROJECT_NAME}/g" nginx/nginx.conf.front
+    - sed -i -e "s/REDMINE_HOST/${REDMINE_HOST_STAGE}/g" nginx/nginx.conf.front
+    - sed -i -e "s/PORT/$PORT_FRONT/g" nginx/nginx.conf.front
+    - mv nginx/nginx.conf.front $NGINX_CONF_PATH/${WEB_PROJECT_NAME}.stg.techrm.ru.conf
+    - sudo nginx -t >/dev/null 2>&1
+    - sudo service nginx reload
+    - curl -X POST --header "Content-Type:application/json" --data "{\"channel\":\"#pipeline\",\"text\":\"${SLACK_TEXT} ${WEB_PROJECT_NAME}.stg.techrm.ru\"}" $SLACK_HOOK
+  only:
+    - stage

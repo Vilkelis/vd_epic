@@ -14,6 +14,8 @@ export interface INavBarItemTitleModel {
 export interface INavBarItemModel {
   title: INavBarItemTitleModel
   body?: Array<INavBarItemBodyItemModel>
+  item_active?: boolean
+  next_item_active?: boolean
 }
 
 interface INavBarItemProps {

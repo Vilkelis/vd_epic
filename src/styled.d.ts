@@ -1,7 +1,25 @@
 import 'styled-components'
 
-import { ITheme } from 'styles/styled'
-
 declare module 'styled-components' {
-  export interface DefaultTheme extends ITheme {}
+  export interface DefaultTheme {
+    body: {
+      main: {
+        background: string
+        color: string
+      }
+      sidebar: {
+        background: string
+        borderRight: string
+        color: string
+      }
+    }
+    footer: {
+      background: string
+      color: string
+    }
+    header: {
+      background: string
+      color: string
+    }
+  }
 }
