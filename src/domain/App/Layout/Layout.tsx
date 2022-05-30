@@ -1,4 +1,4 @@
-import React, { FC, PropsWithChildren } from 'react'
+import React, { FC } from 'react'
 
 import { navBarItems } from 'constants/constants'
 import HeaderBar from './HeaderBar'
@@ -7,7 +7,11 @@ import NavBar from './NavBar'
 
 import './Layout.module.css'
 
-const Layout: FC<PropsWithChildren> = ({ children }) => {
+interface IOnlyChildrenProps {
+  children?: React.ReactNode
+}
+
+const Layout: FC<IOnlyChildrenProps> = ({ children }: IOnlyChildrenProps) => {
   return (
     <>
       <header>

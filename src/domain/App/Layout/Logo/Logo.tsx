@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import logo from 'assets/icons/logo.svg'
 
 const Logo: FC = () => {
   return (
@@ -7,7 +8,7 @@ const Logo: FC = () => {
       href="/"
       title="НИИ ВОСХОД: Перейти на домашнюю страницу"
     >
-      <img src="/img/logo.svg" alt="НИИ ВОСХОД" width="211" height="46" />
+      <img src={logo} alt="НИИ ВОСХОД" width="211" height="46" />
     </a>
   )
 }

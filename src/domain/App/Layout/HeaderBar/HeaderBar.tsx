@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import Buttons from './Buttons'
 import Filters from './Filters'
 
-import './HeaderBar.css'
+import './HeaderBar.module.css'
 
 const HeaderBar: FC = () => {
   return (

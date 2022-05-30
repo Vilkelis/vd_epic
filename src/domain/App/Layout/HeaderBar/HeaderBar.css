@@ -1,38 +1,43 @@
 .header_bar {
   display: flex;
   align-items: flex-end;
-  padding-left: 50px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 115.5%;
   justify-content: space-between;
+
   width: 100%;
+  padding-left: 50px;
+
+  font-size: 13px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 115.5%;
 }
 
 .header_bar .filters {
   display: flex;
   align-items: flex-end;
+
   padding-bottom: 6px;
 }
 
 .header_bar .buttons {
   display: flex;
   align-items: flex-end;
-  padding-left: 0px;
+
   padding-bottom: 6px;
+  padding-left: 0px;
 }
 
 .header_bar .dx-widget.dx-button {
-  border-radius: 3px;
   margin-left: 20px;
+
+  border-radius: 3px;
 }
 
 .header_bar .dx-widget.dx-button .dx-button-content {
-  padding-left: 15px;
-  padding-right: 15px;
   padding-top: 6px;
+  padding-right: 15px;
   padding-bottom: 7px;
+  padding-left: 15px;
 }
 
 .header_bar .filters .filter {
@@ -56,8 +61,9 @@
 }
 
 .header_bar .dx-widget {
-  font-size: 13px;
   height: 30px;
+
+  font-size: 13px;
 }
 
 .header_bar .dx-widget input {

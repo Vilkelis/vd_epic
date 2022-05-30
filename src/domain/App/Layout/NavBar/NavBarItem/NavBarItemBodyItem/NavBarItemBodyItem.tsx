@@ -1,5 +1,7 @@
 import React, { FC } from 'react'
 
+import list_dot from 'assets/icons/list_dot.svg'
+
 export interface INavBarItemBodyItemModel {
   caption: string
   action: string
@@ -28,7 +30,7 @@ const NavBarItemBodyItem: FC<INavBarItemBodyItemProps> = ({
   return (
     <div className="body-item">
       <div className="icon">
-        <img src="list_dot.svg" alt="dot" width="5" height="5" />
+        <img src={list_dot} alt="dot" width="5" height="5" />
       </div>
       <div className="line-text { props.item.active ? 'active' : '' }">
         <div className="line">&nbsp</div>
