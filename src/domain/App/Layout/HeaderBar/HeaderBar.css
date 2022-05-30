@@ -1,0 +1,65 @@
+.header_bar {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 50px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 115.5%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header_bar .filters {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 6px;
+}
+
+.header_bar .buttons {
+  display: flex;
+  align-items: flex-end;
+  padding-left: 0px;
+  padding-bottom: 6px;
+}
+
+.header_bar .dx-widget.dx-button {
+  border-radius: 3px;
+  margin-left: 20px;
+}
+
+.header_bar .dx-widget.dx-button .dx-button-content {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 6px;
+  padding-bottom: 7px;
+}
+
+.header_bar .filters .filter {
+  width: 150px;
+  min-width: 150px;
+  margin-left: 20px;
+}
+
+/*.header_bar .filters .filter{
+  width: 150px;
+  min-width: 130px;
+  margin-left: 10px;
+}
+*/
+.header_bar .filters .filter:first-child {
+  margin-left: 0px;
+}
+
+.header_bar .filters .filter .label {
+  padding-bottom: 5px;
+}
+
+.header_bar .dx-widget {
+  font-size: 13px;
+  height: 30px;
+}
+
+.header_bar .dx-widget input {
+  padding-top: 3px;
+}

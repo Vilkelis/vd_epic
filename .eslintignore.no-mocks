@@ -1,0 +1,5 @@
+build
+public
+src/tmp
+sra/__mocks__
+src/**/*.data.ts
