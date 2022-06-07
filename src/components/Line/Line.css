@@ -1,0 +1,14 @@
+.box .line-start{
+    border-bottom: 1px solid #7B9ECD;
+    height: 40px;
+}
+
+.box .line-end{
+    border-top: 1px solid #7B9ECD;
+    height: 10px;
+}
+
+.box .line {
+    border-bottom: 1px solid #7B9ECD;
+    height: 0px;
+}

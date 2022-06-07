@@ -33,7 +33,7 @@ const NavBarItemBodyItem: FC<INavBarItemBodyItemProps> = ({
         <img src={list_dot} alt="dot" width="5" height="5" />
       </div>
       <div className="line-text { props.item.active ? 'active' : '' }">
-        <div className="line">&nbsp</div>
+        <div className="line"> </div>
         {itemObj}
       </div>
     </div>

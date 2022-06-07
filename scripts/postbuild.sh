@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cd build || exit
-mv -f ./index.html ../../../views/vd_react_dashboard/index.html.erb
+mv -f ./index.html ../../../views/vd_epic_dashboard/index.html.erb
 
-STATIC=../../../../assets/views/vd_react_dashboard/static
+STATIC=../../../../views/vd_epic_dashboard/static
 
 rm -rf $STATIC
 mkdir -p $STATIC

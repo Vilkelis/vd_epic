@@ -1,0 +1,22 @@
+.column-box .column-box-content .sub-box {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.column-box .column-box-content .sub-box:first-child {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.column-box .column-box-content .sub-box:last-child {
+    margin-bottom: 40px;
+}
+
+
+.column-box .column-box-content:first-child(.sub-box) {
+    margin-top: 0px;
+}
+
+.column-box .column-box-content:last-child(.sub-box) {
+    margin-bottom: 0px;
+}

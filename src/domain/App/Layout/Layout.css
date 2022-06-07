@@ -71,3 +71,24 @@ section.right-side {
   box-sizing: border-box;
   height: 100%;
 }
+
+section.right-side{
+  padding-left: 26px;
+  padding-right: 26px;
+  padding-bottom: 0px;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+page.col-right{
+  flex: 1 1 auto;
+}

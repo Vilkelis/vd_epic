@@ -1,0 +1,19 @@
+.data-block .row {
+    display: flex;
+    align-items: baseline;
+    justify-content: flex-start;
+}
+
+.data-block>.row{
+    margin-right: -5px;
+    margin-left: -5px;
+    margin-bottom: 5px;
+}
+
+.data-block>.row.big-offset{
+    margin-bottom: 25px;
+}
+
+.data-block>.row.offset{
+    padding-top: 32px;
+}

@@ -1,0 +1,19 @@
+.data-block .box .column-box{
+    display: flex;
+    background: #202020;    
+}
+
+.column-box .column-box-content {
+    flex-grow: 1;
+
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.column-box:first-child .column-box-content {
+    margin-left: 0px;
+}
+
+.column-box:last-child .column-box-content {
+    margin-right: 0px;
+}

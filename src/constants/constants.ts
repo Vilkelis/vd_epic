@@ -27,7 +27,11 @@ export const navBarItems: Array<INavBarItemModel> = [
         caption: 'Рейтинг заместителей министра МЦ',
       },
     ],
-    title: { active: false, caption: 'Рейтинги', icon: 'assets/icons/nav_bar_stars.svg' },
+    title: {
+      active: false,
+      caption: 'Рейтинги',
+      icon: 'assets/icons/nav_bar_stars.svg',
+    },
   },
   {
     title: {

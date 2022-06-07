@@ -33,6 +33,7 @@ export default defineConfig({
       hooks: resolve(__dirname, '/src/hooks'),
       models: resolve(__dirname, '/src/models'),
       utils: resolve(__dirname, '/src/utils'),
+      devextreame: resolve(__dirname, '/src/devextreme'),
     },
   },
   // @ts-ignore

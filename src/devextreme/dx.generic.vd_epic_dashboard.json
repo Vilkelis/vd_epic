@@ -1,0 +1,106 @@
+{
+    "items": [
+        {
+            "key": "$base-accent",
+            "value": "rgba(113, 159, 210, 1)"
+        },
+        {
+            "key": "$base-text-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$base-bg",
+            "value": "rgba(32, 32, 32, 1)"
+        },
+        {
+            "key": "$base-border-color",
+            "value": "rgba(51, 51, 51, 1)"
+        },
+        {
+            "key": "$texteditor-bg",
+            "value": "rgba(231, 231, 231, 1)"
+        },
+        {
+            "key": "$texteditor-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$dropdowneditor-icon-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$dropdowneditor-icon-active-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$calendar-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$checkbox-bg",
+            "value": "rgba(231, 231, 231, 1)"
+        },
+        {
+            "key": "$checkbox-focused-borderd-color",
+            "value": "rgba(113, 159, 210, 1)"
+        },
+        {
+            "key": "$numberbox-spin-icon-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$numberbox-spin-active-bg",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$numberbox-spin-hover-border-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$dropdowneditor-button-hover-bg",
+            "value": "rgba(214, 214, 214, 1)"
+        },
+        {
+            "key": "$dropdowneditor-button-active-bg",
+            "value": "rgba(214, 214, 214, 1)"
+        },
+        {
+            "key": "$texteditor-border-color",
+            "value": "rgba(53, 81, 111, 1)"
+        },
+        {
+            "key": "$base-border-radius-small",
+            "value": "0px"
+        },
+        {
+            "key": "$base-border-radius",
+            "value": "0px"
+        },
+        {
+            "key": "$base-font-family",
+            "value": "'Gilroy'"
+        },
+        {
+            "key": "$button-group-default-selected-color",
+            "value": "rgba(28, 168, 221, 1)"
+        },
+        {
+            "key": "$button-normal-color",
+            "value": "rgba(255, 255, 255, 1)"
+        },
+        {
+            "key": "$button-normal-border-color",
+            "value": "rgba(204, 219, 238, 1)"
+        },
+        {
+            "key": "$button-normal-bg",
+            "value": "rgba(51, 51, 51, 1)"
+        }
+    ],
+    "baseTheme": "generic.dark",
+    "outputColorScheme": "vd_epic_dashboard",
+    "makeSwatch": false,
+    "version": "21.2.7",
+    "widgets": [],
+    "removeExternalResources": false
+}

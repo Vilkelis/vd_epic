@@ -5,7 +5,7 @@ import HeaderBar from './HeaderBar'
 import Logo from './Logo'
 import NavBar from './NavBar'
 
-import './Layout.module.css'
+import './Layout.css'
 
 interface IOnlyChildrenProps {
   children?: React.ReactNode
@@ -26,7 +26,9 @@ const Layout: FC<IOnlyChildrenProps> = ({ children }: IOnlyChildrenProps) => {
         <section className="left-side">
           <NavBar items={navBarItems} />
         </section>
-        <section className="right-side">{children}</section>
+        <section className="right-side">
+          <div className="page">{children}</div>
+        </section>
       </section>
     </>
   )

@@ -1,0 +1,28 @@
+.data-block .box{
+    background: #202020;
+    border-radius: 4px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+
+.box.box-with-header {
+    padding-top: 10px;
+    padding-bottom: 14px;
+}
+
+.box .header {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 22px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid #FFFFFF;
+    margin-bottom: 14px;
+}

@@ -1,0 +1,18 @@
+.data-block .sub-title {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 115.5%;
+    letter-spacing: 0.05em;
+    padding-top: 32px;
+    padding-right: 37px;
+    padding-left: 37px;
+    padding-bottom: 13px;
+}
+
+.data-block .sub-title-small {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+}

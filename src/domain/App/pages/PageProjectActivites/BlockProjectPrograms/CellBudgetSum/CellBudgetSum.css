@@ -1,0 +1,14 @@
+.budget-sum{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.budget-sum-caption{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 40px;
+    margin-left: 6px;
+}

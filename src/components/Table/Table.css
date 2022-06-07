@@ -1,0 +1,147 @@
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table.striped thead th{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 13px;
+    color: #FFFFFF;
+}
+
+table.lined thead th {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+}
+
+table tbody {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+table thead,
+table tbody  {
+    text-align: left;
+}
+
+table.striped thead tr{
+    background-color: #202020;
+}
+
+table.striped thead tr,
+table.striped tbody tr{
+    height: 49px;
+}
+
+table.striped thead tr th:first-child{
+    border-radius: 4px 0px 0px 4px;
+}
+
+table.striped thead tr th:last-child{
+    border-radius: 0px 4px 4px 0px;
+}
+
+table.striped tbody tr td:first-child{
+    border-radius: 4px 0px 0px 4px;
+}
+
+table.striped tbody tr td:last-child{
+    border-radius: 0px 4px 4px 0px;
+}
+
+table.striped tbody tr:nth-child(odd){
+    background-color: #333333;/* фон четных */
+}
+
+table.striped tbody tr:nth-child(even){
+    background-color: #202020;/* фон нечетных*/
+}
+
+tbody tr:hover td{
+    background: #719FD2;/* фон строки при наведении */
+}
+
+table.striped td,
+table.striped th {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+table.striped th:first-child,
+table.striped td:first-child  {
+    padding-left: 30px;
+    padding-right: 75px;
+}
+
+table.striped th:last-child,
+table.striped td:last-child  {
+    padding-right: 30px;
+}
+
+table.lined td{
+    border-bottom: 0.5px solid #FFFFFF;
+    border-top: 0.5px solid #FFFFFF;
+}
+
+table.lined td{
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table.lined th {
+    vertical-align: bottom;
+    padding-top: 4px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table.lined th:first-child,
+table.lined td:first-child  {
+    padding-left: 0px;
+    padding-right: 20px;
+}
+
+table.lined th:last-child,
+table.lined td:last-child  {
+    padding-right: 0px;
+}
+
+table.striped thead th .cell-head {
+    display: flex;
+    align-items: center;
+}
+
+table.lined thead th .cell-head {
+    display: flex;
+    align-items: flex-end;
+}
+
+table.lined thead th .cell-head-caption{
+    padding-bottom: 6px;
+}
+
+table.lined thead th .cell-head-sort{
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+table.striped thead th .cell-head-sort{
+    padding-left: 10px;
+    padding-top: 4px;
+}
+
+

@@ -1,0 +1,45 @@
+.panel {
+    flex: 1 1 auto;
+
+    margin-right: 24px;
+    margin-bottom: 48px;
+    margin-left: 24px;
+
+    border-radius: 0px 8px 8px 8px;
+    background: #333333;
+}
+
+.panel .title{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    padding-left: 50px;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    border-bottom: 1px solid #7B9ECD;
+    border-left: 5px solid #719FD2;
+
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 115.5%;
+}
+
+.panel .body{
+    padding: 18px;
+}
+
+.panel.width-small {
+    width: 840px;
+    min-width: 840px;
+    max-width: 840px;
+}
+
+.panel.width-large {
+    width:  1055px;
+    min-width:  1055px;
+    max-width:  1055px;
+}

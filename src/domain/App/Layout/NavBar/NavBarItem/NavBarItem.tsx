@@ -60,7 +60,7 @@ const NavBarItem: FC<INavBarItemProps> = ({ item }: INavBarItemProps) => {
             <img src={item.title.icon} alt="icon" width="41" height="41" />
           </div>
           <div className={`line-text ${titleActiveClass}`}>
-            <div className="line">&nbsp</div>
+            <div className="line"> </div>
             {title}
           </div>
         </div>
