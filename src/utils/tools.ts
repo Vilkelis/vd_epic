@@ -63,3 +63,20 @@ export function formatReportDate(date: Date, emptySymbol: string = '...') {
   }
   return emptySymbol
 }
+
+// Возвращает дату - 7 дней
+export function weekOffsetFromToday(): Date {
+  const date = new Date()
+  date.setDate(date.getDate() - 7)
+  return date
+}
+
+export function formatDateToParam(
+  date: Date | undefined,
+  emptySymbol: string = '',
+): string {
+  if (date) {
+    return moment(date).format('YYYY-MM-DD')
+  }
+  return emptySymbol
+}

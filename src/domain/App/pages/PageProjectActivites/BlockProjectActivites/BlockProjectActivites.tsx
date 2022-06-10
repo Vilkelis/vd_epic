@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { LineKind } from 'tools/enums'
+import { LineKind, MarkerKind } from 'utils/enums'
 
 import Box from 'components/Box'
 import ColumnBox from 'components/ColumnBox'
@@ -66,7 +66,7 @@ const BlockProjectActivities: FC = () => {
             color_class="color-red"
             number={data.pp_no_budget}
             caption={`(${data.pp_no_budget_din_percent}%)`}
-            marker="marker_down_red.svg"
+            marker={MarkerKind.marker_down_red}
             description="ПП, по которым нет финансирования (нет заключенного контракта или соглашения)"
             description_width="240px"
           />
@@ -81,7 +81,7 @@ const BlockProjectActivities: FC = () => {
                 color_class="color-green"
                 number={data.pp_with_budget}
                 caption={`(${data.pp_with_budget_din_percent}%)`}
-                marker="marker_up_green.svg"
+                marker={MarkerKind.marker_up_green}
                 description="ПП, по которым есть финансирование"
                 description_width="140px"
               />

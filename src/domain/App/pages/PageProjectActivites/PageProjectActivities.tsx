@@ -18,7 +18,7 @@ const PageProjectActivities: FC = () => {
       <div className="col-right">
         <div className="vertical-container">
           <Panel
-            title="Программы проектов по типу контракта"
+            title="Типы контрактов"
             panel_class="width-large"
           >
             <BlockProjectPrograms />

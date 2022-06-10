@@ -1,11 +1,15 @@
 import React, { FC } from 'react'
+import { MarkerKind } from 'utils/enums'
+
+import marker_down_red from 'assets/icons/marker_down_red.svg'
+import marker_up_green from 'assets/icons/marker_up_green.svg'
 
 import './NumberBox.css'
 
 interface INumberBoxProps {
   number: number
   caption?: string
-  marker?: string
+  marker?: MarkerKind
   description?: string
   description_width?: string
   color_class?: string
@@ -25,16 +29,17 @@ const NumberBox: FC<INumberBoxProps> = ({
 }: INumberBoxProps) => {
   let markerObj = null
   let descriptionObj = null
+  let useMarker = null
+  if (marker === MarkerKind.marker_up_green) {
+    useMarker = marker_up_green
+  } else if (marker === MarkerKind.marker_down_red) {
+    useMarker = marker_down_red
+  }
 
-  if (marker) {
+  if (useMarker) {
     const markerSize = small ? 12 : 22
     markerObj = (
-      <img
-        src={`assets/icons/${marker}`}
-        alt=""
-        width={markerSize}
-        height={markerSize}
-      />
+      <img src={useMarker} alt="" width={markerSize} height={markerSize} />
     )
   }
   if (description) {

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import parse from 'html-react-parser'
 
 import { Template } from '../CellData'
 import SortButton from './SortButton'
@@ -23,7 +23,7 @@ const CellHead: FC<ICellHeadProps> = ({ column }: ICellHeadProps) => {
     <th>
       <div className="cell-head">
         <div className="cell-head-caption">
-          {ReactHtmlParser(column.caption)}
+          {parse(column.caption)}
         </div>
         {column.allow_sort ? <SortButton sort={column.sort} /> : null}
       </div>

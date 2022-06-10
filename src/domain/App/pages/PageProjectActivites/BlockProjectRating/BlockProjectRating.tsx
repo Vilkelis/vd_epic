@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { TableKind } from 'tools/enums'
+import { TableKind } from 'utils/enums'
 
 import Table from 'components/Table'
 import CellContractCount from './CellContractCount'

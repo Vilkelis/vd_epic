@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { ColorKind } from 'tools/enums'
+import { ColorKind } from 'utils/enums'
 
 import './CellValuePercent.css'
 

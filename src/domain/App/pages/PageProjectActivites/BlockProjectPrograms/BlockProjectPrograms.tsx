@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { TableKind } from 'tools/enums'
+import { TableKind } from 'utils/enums'
 
 import DataBlock from 'components/DataBlock'
 import Table from 'components/Table'

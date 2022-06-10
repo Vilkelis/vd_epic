@@ -1,11 +1,13 @@
 import React, { FC } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { loadMessages, locale } from 'devextreme/localization'
 import ruMessages from 'devextreme/localization/messages/ru.json'
 
-import PageProjectActivities from './pages/PageProjectActivites'
 import Layout from './Layout'
+import routes from './routes'
 
-import 'devextreme/dx.generic.vd_epic_dashboard.css'
+import 'devextreme/dx.generic.vd_epic_dashboard_light.css'
+import 'devextreme/theme_customize.css'
 import './Fonts.css'
 import './App.css'
 
@@ -14,9 +16,9 @@ const App: FC = () => {
   locale('ru')
 
   return (
-    <Layout>
-      <PageProjectActivities />
-    </Layout>
+    <Router>
+      <Layout>{routes}</Layout>
+    </Router>
   )
 }
 

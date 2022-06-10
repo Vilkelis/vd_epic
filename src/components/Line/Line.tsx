@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import './Line.css'
 
-import {LineKind} from 'tools/enums'
+import {LineKind} from 'utils/enums'
 
 interface ILineProps {
   line_kind: LineKind

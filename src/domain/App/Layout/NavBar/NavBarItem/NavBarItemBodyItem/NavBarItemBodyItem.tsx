@@ -1,4 +1,7 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useTypedSelector } from 'store/hooks/useTypedSelector'
+import { filterStateToSearchParams } from 'store/reducers/filterReducer'
 
 import list_dot from 'assets/icons/list_dot.svg'
 
@@ -15,13 +18,17 @@ interface INavBarItemBodyItemProps {
 const NavBarItemBodyItem: FC<INavBarItemBodyItemProps> = ({
   item,
 }: INavBarItemBodyItemProps) => {
+  const state = useTypedSelector((rootState) => rootState.filter)
   let itemObj
 
   if (item.action) {
     itemObj = (
-      <a className="text" href={item.action}>
+      <NavLink
+        className={`text ${item.active ? 'active' : ''}`}
+        to={`${item.action}?${filterStateToSearchParams(state)}`}
+      >
         {item.caption}
-      </a>
+      </NavLink>
     )
   } else {
     itemObj = <div className="text">{item.caption}</div>
@@ -32,7 +39,7 @@ const NavBarItemBodyItem: FC<INavBarItemBodyItemProps> = ({
       <div className="icon">
         <img src={list_dot} alt="dot" width="5" height="5" />
       </div>
-      <div className="line-text { props.item.active ? 'active' : '' }">
+      <div className={`line-text ${item.active ? 'active' : ''}`}>
         <div className="line"> </div>
         {itemObj}
       </div>

@@ -1,0 +1,15 @@
+.dynamic-select-box {
+    display: flex;
+}
+
+.dynamic-select-box>div:not(:first-child){
+    margin-left: 10px;
+}
+
+.dynamic-select-box>.select-box {
+    width: 120px;
+}
+
+.dynamic-select-box>.date {
+    width: 120px;
+}

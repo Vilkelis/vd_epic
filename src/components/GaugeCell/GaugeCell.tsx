@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import ReactHtmlParser from 'react-html-parser'
+import parse from 'html-react-parser'
 import BarGauge from 'devextreme-react/bar-gauge'
 
 import './GaugeCell.css'
@@ -21,7 +21,7 @@ const GaugeCell: FC<IGaugeCellProps> = ({
   return (
     <div className="gauge-cell">
       <div className="gauge-cell-data">
-        <div className="gauge-cell-title">{ReactHtmlParser(title)} </div>
+        <div className="gauge-cell-title">{parse(title)} </div>
         <div className="gauge-cell-value">{value_num}</div>
       </div>
       <div className="gauge">

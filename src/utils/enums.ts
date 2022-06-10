@@ -16,3 +16,15 @@ export enum LineKind {
   Start = 'line-start',
   End = 'line-end',
 }
+
+export enum MarkerKind {
+  marker_up_green ,
+  marker_down_red,
+}
+
+export enum DynamicPeriodKind {
+  week = 'week',
+  month = 'month',
+  quarter = 'quarter',
+  to_date = 'to_date',
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { formatReportMoneyInt } from 'tools/tools'
+import { formatReportMoneyInt } from 'utils/tools'
 
 import ITemplate from 'components/Table/CellData'
 

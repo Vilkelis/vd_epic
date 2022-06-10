@@ -1,0 +1,27 @@
+.dx-calendar-body tbody tr:hover td {
+  background-color: rgb(198, 226, 255);
+}
+
+.dx-calendar-body tbody tr td:hover {
+    background-color: rgb(128, 172, 217);
+    color: white;
+    font-weight: bold;
+}
+
+.dx-calendar-body .dx-calendar-selected-date{
+    color:white;
+    font-weight: bold!important;
+}
+
+.dx-calendar-body table tbody {
+    font-weight: normal;
+}
+
+.dx-calendar-body .dx-calendar-cell.dx-calendar-today:not(.dx-calendar-selected-date){
+    font-weight: bold;
+    color: #3da5ff;
+}
+
+.dx-calendar-body .dx-calendar-cell.dx-calendar-today:hover{
+    color: white;
+}

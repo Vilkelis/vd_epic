@@ -1,4 +1,7 @@
 import React, { FC } from 'react'
+import { NavLink } from 'react-router-dom'
+import { useTypedSelector } from 'store/hooks/useTypedSelector'
+import { filterStateToSearchParams } from 'store/reducers/filterReducer'
 
 import NavBarItemBodyItem, {
   INavBarItemBodyItemModel,
@@ -23,18 +26,22 @@ interface INavBarItemProps {
 }
 
 const NavBarItem: FC<INavBarItemProps> = ({ item }: INavBarItemProps) => {
-  const itemActiveClass = item.item_active ? 'active' : ''
-  const nextItemActiveClass = item.next_item_active ? 'next-active' : ''
-  const titleActiveClass = item.title.active ? 'active' : ''
+  const itemActiveClass = item.item_active ? 'active' : '' // Есть ли хоть один подпункт активный
+  const nextItemActiveClass = item.next_item_active ? 'next-active' : '' // Активен ли следующий пункт
+  const titleActiveClass = item.title.active ? 'active' : '' // Активен ли заголовок (если нет подпунктов)
+  const state = useTypedSelector((rootState) => rootState.filter)
 
   let title
   let body
 
   if (item.title.action) {
     title = (
-      <a href="{item.title.action}" className="text">
+      <NavLink
+        className={`text ${itemActiveClass}`}
+        to={`${item.title.action}?${filterStateToSearchParams(state)}`}
+      >
         {item.title.caption}
-      </a>
+      </NavLink>
     )
   } else {
     title = <div className="text">{item.title.caption}</div>

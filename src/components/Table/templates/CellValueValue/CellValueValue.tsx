@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 
 import './CellValueValue.css'
 
-import {ColorKind} from 'tools/enums'
+import {ColorKind} from 'utils/enums'
 
 interface ICellValueValueProps {
   value1: number

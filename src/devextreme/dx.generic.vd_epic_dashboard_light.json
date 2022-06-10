@@ -1,0 +1,38 @@
+{
+    "items": [
+        {
+            "key": "$base-font-family",
+            "value": "'Gilroy'"
+        },
+        {
+            "key": "$base-link-color",
+            "value": "rgb(123, 158, 205)"
+        },
+        {
+            "key": "$base-icon-color",
+            "value": "rgb(53, 81, 111)"
+        },
+        {
+            "key": "$base-border-radius-small",
+            "value": "0"
+        },
+        {
+            "key": "$base-border-radius",
+            "value": "0px"
+        },
+        {
+            "key": "$badge-bg",
+            "value": "rgb(53, 81, 111)"
+        },
+        {
+            "key": "$base-text-color",
+            "value": "rgb(53, 81, 111)"
+        }
+    ],
+    "baseTheme": "generic.light",
+    "outputColorScheme": "vd_epic_dashboard_light",
+    "makeSwatch": false,
+    "version": "21.2.8",
+    "widgets": [],
+    "removeExternalResources": false
+}

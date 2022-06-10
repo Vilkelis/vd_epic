@@ -1,5 +1,5 @@
 import React from 'react'
-import { ColorKind } from 'tools/enums'
+import { ColorKind } from 'utils/enums'
 
 import ITemplate from 'components/Table/CellData'
 import CellValueValue from 'components/Table/templates/CellValueValue'

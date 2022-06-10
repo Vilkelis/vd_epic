@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { TableKind } from 'tools/enums'
 import { v4 as uuidv4 } from 'uuid'
 
+import { TableKind } from 'utils/enums'
 import CellData from './CellData'
 import CellHead, { IColumn } from './CellHead'
 

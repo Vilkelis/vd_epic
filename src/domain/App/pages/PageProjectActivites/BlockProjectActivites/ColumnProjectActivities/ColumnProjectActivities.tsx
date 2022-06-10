@@ -4,6 +4,7 @@ import GaugeCell from 'components/GaugeCell'
 import NumberBox from 'components/NumberBox'
 
 import './ColumnProjectActivities.css'
+import {MarkerKind} from 'utils/enums'
 
 interface IColumnProjectActivitiesProps {
   title: string
@@ -25,27 +26,27 @@ const ColumnProjectActivities: FC<IColumnProjectActivitiesProps> = ({
   const number = data.overdued_count
   let caption = ''
   let colorClassCaption = ''
-  let marker = ''
+  let marker = undefined
   if (data.overdued_count_din > 0) {
     caption = `(+${data.overdued_count_din})`
     colorClassCaption = 'color-red'
-    marker = 'marker_down_red.svg'
+    marker = MarkerKind.marker_down_red
   } else if (data.overdued_count_din < 0) {
     caption = `(${data.overdued_count_din})`
     colorClassCaption = 'color-green'
-    marker = 'marker_up_green.svg'
+    marker = MarkerKind.marker_up_green
   }
 
   const numberRed = data.ok_count
   const captionRed = ''
   let colorClassCaptionRed = ''
-  let markerRed = ''
+  let markerRed = undefined
   if (data.ok_count_din > 0) {
     colorClassCaptionRed = 'color-green'
-    markerRed = 'marker_up_green.svg'
+    markerRed =  MarkerKind.marker_up_green
   } else if (data.ok_count_din < 0) {
     colorClassCaptionRed = 'color-red'
-    markerRed = 'marker_down_red.svg'
+    markerRed =  MarkerKind.marker_down_red
   }
 
   return (

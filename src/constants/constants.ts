@@ -1,9 +1,10 @@
-import { INavBarItemModel } from '../domain/App/Layout/NavBar/NavBarItem'
+import { INavBarItemModel } from 'domain/App/Layout/NavBar/NavBarItem'
+import { DynamicPeriodKind } from 'utils/enums'
 
 export const navBarItems: Array<INavBarItemModel> = [
   {
     title: {
-      action: 'HELLO!',
+      action: '/',
       active: true,
       caption: 'Проектная деятельность',
       icon: 'assets/icons/nav_bar_roket.svg',
@@ -12,17 +13,17 @@ export const navBarItems: Array<INavBarItemModel> = [
   {
     body: [
       {
-        action: 'Hello!',
+        action: '/rating-vice-directors',
         active: false,
         caption: 'Рейтинг заместителей директора НИИ «Восход»',
       },
       {
-        action: 'Hello!',
+        action: '/rating-department-directors',
         active: false,
         caption: 'Рейтинг директоров департаментов НИИ «Восход»',
       },
       {
-        action: 'Hello!',
+        action: '/rating-vice-ministers',
         active: false,
         caption: 'Рейтинг заместителей министра МЦ',
       },
@@ -35,7 +36,7 @@ export const navBarItems: Array<INavBarItemModel> = [
   },
   {
     title: {
-      action: 'HELLO!',
+      action: '/staff',
       active: false,
       caption: 'Кадры',
       icon: 'assets/icons/nav_bar_card.svg',
@@ -43,7 +44,7 @@ export const navBarItems: Array<INavBarItemModel> = [
   },
   {
     title: {
-      action: 'HELLO!',
+      action: '/finance',
       active: false,
       caption: 'Финансы',
       icon: 'assets/icons/nav_bar_money.svg',
@@ -51,10 +52,22 @@ export const navBarItems: Array<INavBarItemModel> = [
   },
   {
     title: {
-      action: 'HELLO!',
+      action: '/purchases',
       active: false,
       caption: 'Закупки',
       icon: 'assets/icons/nav_bar_basket.svg',
     },
   },
+]
+
+interface IDynamicPeriodSelectBoxItem {
+  id: DynamicPeriodKind
+  name: string
+}
+
+export const DynamicPeriodSelectItems: IDynamicPeriodSelectBoxItem[] = [
+  { id: DynamicPeriodKind.week, name: 'Неделя' },
+  { id: DynamicPeriodKind.month, name: 'Месяц' },
+  { id: DynamicPeriodKind.quarter, name: 'Квартал' },
+  { id: DynamicPeriodKind.to_date, name: 'На дату' },
 ]
